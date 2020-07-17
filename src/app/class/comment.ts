@@ -6,11 +6,15 @@ export class Comment {
   initial: string;
   message: string;
   date: string;
+  key?: string;
+  isEdit?: boolean;
 
-  constructor(user: User, message: string) {
-    this.user = user;
-    this.initial = user.name.slice(0, 1);
-    this.message = message;
-    this.date = format(new Date());
+  constructor(values: any) {
+    this.user = values.user;
+    this.initial = values.initial || values.user.name.slice(0, 1);
+    this.message = values.message;
+    this.date = values.date || format(new Date());
+    if (values.key) { this.key = values.key; }
+    this.isEdit = false;
   }
 }
