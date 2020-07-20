@@ -9,11 +9,14 @@ import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
 import { ChatComponent } from './chat/chat.component';
+import { AppRoutingModule } from './app-routing.module';
+import { NotFoundComponent } from './error/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChatComponent
+    ChatComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,8 @@ import { ChatComponent } from './chat/chat.component';
     SharedModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
