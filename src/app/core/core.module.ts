@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { AuthService } from './service/auth.service';
+import { UserService } from './service/user.service';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { AuthService } from './service/auth.service';
     HeaderComponent
   ],
   providers: [
-    AuthService
+    AuthService,
+    UserService
   ]
 })
 export class CoreModule {
