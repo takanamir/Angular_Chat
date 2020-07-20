@@ -21,4 +21,20 @@ export class AuthService {
         this.router.navigate(['/']);
       });
   }
+
+  login(email: string, password: string): void {
+    this.afAuth.auth.signInWithEmailAndPassword(email, password)
+      .then(user => {
+        this.router.navigate(['/']);
+      })
+      .catch(error => console.error(error));
+  }
+
+  logout(): void {
+    this.afAuth.auth.signOut()
+      .then(() => {
+        this.router.navigate(['/login']);
+      })
+      .catch(error => console.error(error));
+  }
 }
